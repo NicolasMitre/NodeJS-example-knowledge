@@ -60,8 +60,9 @@ body {
         <div id="nivel5"></div>
         <div id="nivel4"></div>
         <div id="nivel3"></div>
+
         <div id="nivel2"></div>
-        <div id="nivel1"></div>
+        <div id="nivel1"></div> 
     </div>
 </body>
 <script>
@@ -69,10 +70,18 @@ body {
         const container = document.querySelector('.image-container');
         container.scrollTop = container.scrollHeight;
     });
-    window.addEventListener('click', () => {
-        const container = document.querySelector('.image-container');
-    console.log('Scroll Top:', container.scrollTop);  // Muestra la po
-    })
+
+    document.querySelector('.image-container').addEventListener('scroll', (event) => {
+            const container = event.target;  // Obtener el contenedor
+            const maxScroll = 1060;
+            console.log(container.scrollTop);
+            
+            // Si el scroll ha superado los 1060 píxeles, detener el scroll
+            if (container.scrollTop <= maxScroll) {
+                // Fijamos el scroll a 1060px sin interferir con la visualización
+                container.scrollTop = maxScroll;
+            }
+    });
 
     const nivel1 = document.getElementById('nivel1');
     nivel1.addEventListener('click', () => {

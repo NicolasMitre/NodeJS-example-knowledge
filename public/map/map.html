@@ -47,7 +47,6 @@ body {
     position: absolute;
     width: 300px;
     height: 300px;
-    cursor: pointer;
 }
 
 </style>
@@ -74,7 +73,6 @@ body {
     document.querySelector('.image-container').addEventListener('scroll', (event) => {
             const container = event.target;  // Obtener el contenedor
             const maxScroll = 1060;
-            console.log(container.scrollTop);
             
             // Si el scroll ha superado los 1060 píxeles, detener el scroll
             if (container.scrollTop <= maxScroll) {
@@ -85,12 +83,14 @@ body {
 
     const nivel1 = document.getElementById('nivel1');
     nivel1.addEventListener('click', () => {
-        alert("new game");
+        alert("new game 1");
+
+        const nivel2 = document.getElementById('nivel2');
+        nivel2.style.cursor = 'pointer';
+        nivel2.addEventListener('click', () => {
+            alert("new game 2");
+        });
     });
 
-    const nivel2 = document.getElementById('nivel2');
-    nivel2.addEventListener('click', () => {
-        alert("new game 2");
-    });
 </script>
 </html>

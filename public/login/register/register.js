@@ -44,7 +44,6 @@ btnRegister.addEventListener('click', (e) => {
         .then(data => {
             if (data.message === "User has been created") {
                 console.log('Registro exitoso:', data);
-                localStorage.setItem('stage', 'new register');
                 window.location.href = '../../map/index.html';
             }
         })
@@ -52,8 +51,7 @@ btnRegister.addEventListener('click', (e) => {
             if (error.message === "Username is already taken") {
                 showErrorModal("Username is already taken. Please choose another one.");
             } else {
-                showErrorModal(error.message)
-                //showErrorModal("An error occurred while registering. Please try again later.");
+                showErrorModal(error.message);
             }
         });
     }

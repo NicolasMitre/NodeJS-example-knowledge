@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import { configDotenv } from "dotenv";
-configDotenv();
 
 const { DB_HOST, DB_PORT, DB_NAME } = process.env;
 
@@ -10,7 +8,7 @@ export const connectDB = async () => {
       await mongoose.connect(`mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`);
     } catch (error) {
       console.error('MongoDB connection failed:', error);
-      process.exit(1); // Detener la aplicación si falla la conexión
+      process.exit(1);
     }
   }
 };

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen de Gran Tamaño</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.image-container {
+    width: 1920px;
+    height: 100vh; /* Ajuste para asegurar que el contenedor ocupe toda la altura de la ventana */
+    overflow: auto; /* Permitir el desplazamiento */
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto; /* Asegura que la imagen mantenga su proporción */
+}
+
+#nivel1 {
+    left: 680px;
+    bottom: -3790px;
+    z-index: 9999999;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+#nivel2 {
+    left: 1500px;
+    bottom: -3590px;
+    z-index: 9999999;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+}
+
+</style>
+    <div class="image-container">
+        <img id="largeImage" src="../assets/img/mapa.png" alt="Imagen de Gran Tamaño">
+        <div id="nivel9"></div>
+        <div id="nivel8"></div>
+        <div id="nivel7"></div>
+        <div id="nivel6"></div>
+        <div id="nivel5"></div>
+        <div id="nivel4"></div>
+        <div id="nivel3"></div>
+        <div id="nivel2"></div>
+        <div id="nivel1"></div>
+    </div>
+</body>
+<script>
+    window.addEventListener('load', () => {
+        const container = document.querySelector('.image-container');
+        container.scrollTop = container.scrollHeight;
+    });
+    window.addEventListener('click', () => {
+        const container = document.querySelector('.image-container');
+    console.log('Scroll Top:', container.scrollTop);  // Muestra la po
+    })
+
+    const nivel1 = document.getElementById('nivel1');
+    nivel1.addEventListener('click', () => {
+        alert("new game");
+    });
+
+    const nivel2 = document.getElementById('nivel2');
+    nivel2.addEventListener('click', () => {
+        alert("new game 2");
+    });
+</script>
+</html>

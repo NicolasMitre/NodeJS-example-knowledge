@@ -3,7 +3,7 @@ import { authentication } from "../middlewares/authentication.js";
 import { validID } from "../middlewares/validIdMongoose.js";
 import { authorization } from "../middlewares/authorization.js";
 import { cacheMiddleware } from "../middlewares/cacheMiddleware.js";
-import { createTable, getAllTables, getTableById, getTablesByCasino, updateTableByIdAndCasinoOwner, deleteTableById } from "../controllers/table.controller";
+import { createTable, getAllTables, getTableById, getTablesByCasino, updateTableByIdAndCasinoOwner, deleteTableById } from "../controllers/table.controller.js";
 
 const router = express.Router();
 

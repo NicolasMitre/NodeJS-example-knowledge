@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const cinematic = localStorage.getItem('stage');
+  if (cinematic === 'new register') {
+     window.location.href = './map.html';
+  } else {
+  localStorage.setItem('stage', 'new register');
   const frames = document.querySelectorAll('.frame');
   const dialogueContainer = document.getElementById('dialogue-container');
 
@@ -157,4 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   nextScene(); // Iniciar la primera escena
+  }
 });
+

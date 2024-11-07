@@ -49,11 +49,11 @@ export const login = async (req, res) => {
     }
 
     try {
-        const existingUser = await findUserByUsername(username); // Función que busca si el usuario ya existe
+        const existingUser = await findUserByUsername(username);
 
         if (!existingUser) {
-            return res.status(409).send({ // 409 Conflict para indicar que ya existe
-                message: "Incorrect username"
+            return res.status(404).send({
+                message: "User doesnt exist"
             });
         }
 
@@ -74,7 +74,6 @@ export const login = async (req, res) => {
         return res.status(403).send({
             accessAllowed: passwordCompared
         })
-        
     
     } catch (error) {
         console.log(error);
@@ -83,8 +82,6 @@ export const login = async (req, res) => {
         });
     }
 };
-
-
 
 export const getAllUsers = async (req, res) => {
     try {

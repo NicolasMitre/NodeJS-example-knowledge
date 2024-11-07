@@ -12,7 +12,7 @@ export const createTable = async (req, res) => {
     }
 
     try {
-        const existingUser = await findUserByUsername(username); // Función que busca si el usuario ya existe
+        const existingUser = await findUserByUsername(username);
 
         if (existingUser) {
             return res.status(409).send({ // 409 Conflict para indicar que ya existe
